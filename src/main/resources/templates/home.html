@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>home</title>
+ <link rel="stylesheet" th:href="@{/styles/home.css}">
+ <script src="scripts/copyPaste.js"></script>
+</head>
+<body>
+	<h1> Link Redirector </h1>
+	<div th:if="${errorMessage} != null">
+		<p th:text="${errorMessage}">
+	</div>
+	<form action="#" th:action="@{/home}" method="POST">
+		<input type="text" id="redirectLink" name="redirectLink"/>
+		<button> submit </button>
+	</form>
+	<div th:if="${requestLink} != null">
+		<p>your generated link</p>
+		<input type="text" th:value="${requestLink}" id="linkBox">
+		<button onclick="copyTextBox()">Copy Link</button>
+	</div>
+</body>
+</html>

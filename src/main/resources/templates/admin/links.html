@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Links</title>
+<link rel="stylesheet" th:href="@{/styles/home.css}">
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>Link</th>
+			<th>Redirect Link</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tr th:each="link : ${links}">
+	    <td th:text="${link.requestLink}" />    
+	    <td th:text="${link.redirectLink}" />
+	    <td>		
+		    <form action="#" th:action="@{/admin/deleteLink}" method="POST">	
+				<input type="hidden" name="linkID" th:value="${link.id}" />						
+				<button type="submit">
+						Delete
+				</button>
+			</form>
+	    </td>   
+	</tr>
+</table>
+</body>
+</html>

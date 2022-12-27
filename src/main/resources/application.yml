@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/link_redirect?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: linkRedirectApplication
+    password: password
+  web:
+    resources:
+      static-locations: /static/**
+      
+admin:
+  username: "admin"
+  password: "admin123"
